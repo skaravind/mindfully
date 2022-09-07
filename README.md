@@ -1,74 +1,20 @@
-## Overview
+## Inspiration
+This project was inspired by NMF earth's app that helps user track their carbon footprint day to day.
 
-This is the "Quickstart Integration" example Monday app.
-<br>It can be used as a board recipe, which transforms data from one text column to another
+## What it does
+MindFully provides integrations to monday.com users that can help them convert metrics such as distance travelled in car to number of hours of audio content streamed to carbon footprint in kgCO2e. Using monday.com's charting features, users can create dashboards that would help them visualize the major carbon footprint sources from their day to day life.
 
-<br>This app demonstrates how to use:
+## How we built it
+We built it by first starting with the quick integrations project helper provided by monday.com and modifying it to our needs. We take constant values for carbon footprint calculation for NMF earth's open source github repository: https://github.com/NMF-earth/carbon-footprint
 
-- integration recipe
-- custom action
-- call authentication with JWT
-- query monday API using short lived token (seamless authentication)
-- remote options for custom fields
+## Challenges we ran into
+The major challenge that we ran into was we wanted to create a synchronous API so that multiple integrations adding carbon footprint into one output column should wait before the write is finished from the previous API call.
 
-<br>You can find more info in our QuickStart guide [here](https://monday.com/developers/apps/quickstart-integration/)
-<br>![Screenshot](https://dapulse-res.cloudinary.com/image/upload/v1658942490/remote_mondaycom_static/developers/screenshots/QUICKSTART_GIPHY.gif)
+## Accomplishments that we're proud of
+We have integrated some major categories of carbon emission sources in this app that can help users track the major sources adding to their carbon footprint. 
 
-## Install
+## What we learned
+While developing this project we became more aware about our own carbon footprint and got to know interesting facts like **1 KG of lamb food can lead to the same amount of CO2 emissions as 90 miles travelled in a car**. We hope to make monday users more aware of their own carbon footprint and impact on the world.
 
-1. Make sure you have Node (v16.16+) and npm installed
-
-<br>
-3. Run node modules install:
-
-```
-$ npm install
-```
-
-## Configure your Monday App
-
-### Part 1: Create a new app and integration feature
-
-1. Open monday.com, login to your account and go to a "Developers" section.
-2. Create new "Integration Example App"
-3. Open "Features" section and create new "Integration" feature
-4. Choose the "Quickstart Integration - NodeJS" template to start. Add in the missing scopes, run the command scaffold in your command line, and paste the resulting URL into the URL box.
-
-<br>![Screenshot](https://dapulse-res.cloudinary.com/image/upload/v1659026516/integration_template.gif)
-
-### Part 2: Update your integration's basic information
-
-In the feature editor, open the "Feature Details" tab. This tab allows you to add a title and description to your custom integration recipe. The user will see the title and description when they see your recipe in the Integrations Center.
-
-<br>![Screenshot](https://dapulse-res.cloudinary.com/image/upload/v1659026704/ee5c6e5-Quickstart_1.png)
-
-### Part 3: Recipe configuration
-
-Our new feature templates provide the integration recipe for you, so it is ready to go.
-
-<br>![Screenshot](https://dapulse-res.cloudinary.com/image/upload/v1659026804/ecd8711-Recipe.png)
-
-This integration utilizes a custom action that calls our API to update a second text column. If you want to see the code behind this recipe, navigate into the "quickstart-integrations" folder downloaded onto your computer after you ran the command line prompt in Part 1.
-
-In short, integrations run off of triggers that invoke certain actions. These triggers are the conditions that must be met before an action can take place.
-
-## Part 4: Run the project
-
-1. Add your MONDAY_SIGNING_SECRET to .env file
-   <br> \*\* To get your MONDAY_SIGNING_SECRET go to monday.com, open Developers section, open your app and find the Signing Secret in "Basic Information" section
-   <br> ![Screenshot](https://dapulse-res.cloudinary.com/image/upload/f_auto,q_auto/remote_mondaycom_static/uploads/VladMystetskyi/4db4f03e-67a5-482d-893e-033db67ee09b_monday-Apps2020-05-1901-31-26.png)
-2. Run the server with ngrok tunnel with the command:
-
-```
-$ npm start
-```
-
-<br> 
-3. Open http://localhost:4040/status
- to get your ngrok public url
-
- ### Part 5: Using the custom integration recipe
-
-You're done! Head to any of your boards to add the integration recipe by searching up its name (in this example the integration name is "New Feature").
-
-Follow the integration recipe prompts as normal (selecting which Text columns you want) and watch the magic unfold!
+## What's next for MindFully
+We would like to create a custom view for monday users so that instead of creating new integrations in their board for carbon footprint calculation they can open a view, fill a form and add sources of carbon emission along with pre made dashboards that can help them track down and reduce their footprint instead of users having to create their own analysis
