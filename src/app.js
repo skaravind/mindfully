@@ -5,13 +5,12 @@ var queue = require('express-queue');
 const routes = require('./routes');
 const { createTunnel } = require('./helpers/tunnel');
 
-const port = 8080;
+const port = 3100;
+const host = "0.0.0.0";
 const app = express();
 app.use(queue({ activeLimit: 1, queuedLimit: -1 }));
 app.use(bodyParser.json());
 app.use(routes);
-app.listen(port, () => {
-  createTunnel(port);
-});
+app.listen(port, host);
 
 module.exports = app;
