@@ -5,7 +5,7 @@ var queue = require('express-queue');
 const routes = require('./routes');
 const { createTunnel } = require('./helpers/tunnel');
 
-const { PORT: port } = process.env;
+const port = 8080;
 const app = express();
 app.use(queue({ activeLimit: 1, queuedLimit: -1 }));
 app.use(bodyParser.json());
