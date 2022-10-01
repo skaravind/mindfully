@@ -11,6 +11,6 @@ const app = express();
 app.use(queue({ activeLimit: 1, queuedLimit: -1 }));
 app.use(bodyParser.json());
 app.use(routes);
-app.listen(port, host);
+app.listen(process.env.PORT || port);
 
 module.exports = app;
