@@ -3,7 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 var queue = require('express-queue');
 const routes = require('./routes');
-const { createTunnel } = require('./helpers/tunnel');
+//const { createTunnel } = require('./helpers/tunnel');
 
 const port = 3100;
 const host = "0.0.0.0";
