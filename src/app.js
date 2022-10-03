@@ -8,7 +8,6 @@ const routes = require('./routes');
 const port = 3100;
 const host = "0.0.0.0";
 const app = express();
-app.use(cors());
 app.use(queue({ activeLimit: 1, queuedLimit: -1 }));
 app.use(bodyParser.json());
 app.use(routes);
