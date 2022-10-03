@@ -3,10 +3,10 @@ const jwt = require('jsonwebtoken');
 async function authenticationMiddleware(req, res, next) {
   try {
     let { authorization } = req.headers;
-    console.log(req.headers);
     if (!authorization && req.query) {
       authorization = req.query.token;
     }
+    console.log(authorization, process.env.MONDAY_SIGNING_SECRET)
     const { accountId, userId, backToUrl, shortLivedToken } = jwt.verify(
       authorization,
       process.env.MONDAY_SIGNING_SECRET
