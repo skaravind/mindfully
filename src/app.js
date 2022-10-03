@@ -3,7 +3,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 var queue = require('express-queue');
 const routes = require('./routes');
-const cors = require('cors');
 //const { createTunnel } = require('./helpers/tunnel');
 
 const port = 3100;
